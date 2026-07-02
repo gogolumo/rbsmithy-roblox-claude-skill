@@ -1,6 +1,7 @@
 <p align="center">
   <img src="assets/bloxsmith-banner.png" alt="BloxSmith — Claude Skill for Roblox Game Development" />
 </p>
+
 # BloxSmith — Claude Skill for Roblox Game Development
 
 BloxSmith is a production-ready Claude Skill for serious Roblox game development. It helps Claude Code plan, implement, debug, refactor, optimize, and review Roblox games using Luau, Roblox Studio, Rojo, secure multiplayer architecture, DataStores, UI/HUD systems, procedural 3D workflows, Creator Store asset pipelines, QA, analytics, LiveOps, and release management.
