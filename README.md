@@ -1,391 +1,201 @@
-<p align="center">
-  <img src="assets/rbsmithy-banner.png" alt="RBSmithy — Claude Skill for Roblox Game Development" />
-</p>
-
 <h1 align="center">RBSmithy</h1>
 
 <p align="center">
-  <strong>A production-ready Claude Skill for serious Roblox game development.</strong>
+  <strong>Claude Skill for Roblox game development — Luau, Rojo, multiplayer systems, 3D assets, optimization, QA, and production-ready releases.</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/gogolumo/rbsmithy-roblox-claude-skill/releases">
-    <img src="https://img.shields.io/github/v/release/gogolumo/rbsmithy-roblox-claude-skill?style=for-the-badge&color=7c3aed" alt="Release" />
-  </a>
+  <img width="1280" alt="RBSmithy banner" src="assets/rbsmithy-banner.png">
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Claude-Skill-7c3aed?style=for-the-badge" alt="Claude Skill" />
-  <img src="https://img.shields.io/badge/Roblox-Studio-red?style=for-the-badge" alt="Roblox Studio" />
-  <img src="https://img.shields.io/badge/Luau-Typed-blue?style=for-the-badge" alt="Luau" />
-  <img src="https://img.shields.io/badge/Rojo-Ready-orange?style=for-the-badge" alt="Rojo" />
-  <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="MIT License" />
+  <img src="https://img.shields.io/badge/Roblox-Luau-e2231a?style=for-the-badge&logo=roblox&logoColor=white" alt="Roblox Luau" />
+  <img src="https://img.shields.io/badge/Rojo-Ready-f97316?style=for-the-badge" alt="Rojo Ready" />
+  <img src="https://img.shields.io/badge/Multiplayer-Server_Authoritative-2563eb?style=for-the-badge" alt="Server Authoritative Multiplayer" />
+  <img src="https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge" alt="MIT License" />
+</p>
+
+<p align="center">
+  <a href="#quick-install">Quick Install</a> ·
+  <a href="#what-is-rbsmithy">Overview</a> ·
+  <a href="#capabilities">Capabilities</a> ·
+  <a href="#example-prompts">Prompts</a> ·
+  <a href="#skill-structure">Structure</a>
 </p>
 
 ---
 
 ## What is RBSmithy?
 
-**RBSmithy** is a complete Claude Skill that turns Claude Code into a Roblox game development assistant.
+**RBSmithy** is a Claude Skill that turns Claude Code into a practical Roblox game development assistant.
 
-It helps Claude plan, implement, debug, refactor, optimize, and review Roblox games using **Luau**, **Roblox Studio**, **Rojo**, secure multiplayer architecture, DataStores, UI/HUD systems, procedural 3D workflows, Creator Store asset pipelines, QA, analytics, LiveOps, and release management.
+It helps with the full Roblox development loop:
 
-RBSmithy is not just a coding prompt.  
-It is a practical production workflow for building Roblox games seriously.
+- planning game systems;
+- writing clean Luau;
+- organizing Rojo-friendly projects;
+- building server-authoritative multiplayer systems;
+- designing DataStore-safe save flows;
+- reviewing RemoteEvents and RemoteFunctions for exploits;
+- creating 3D asset briefs and procedural Roblox asset plans;
+- optimizing UI, physics, replication, memory, and mobile performance;
+- preparing QA checklists and release-ready reviews.
+
+> RBSmithy is not a magic “make my game” button.  
+> It is a production workflow skill that makes Claude think like a Roblox technical designer, gameplay programmer, QA helper, and release reviewer.
 
 ---
 
-## Why this exists
+## Why RBSmithy?
 
-Roblox projects often become messy because scripts grow too large, remotes become unsafe, DataStores are handled badly, UI breaks on mobile, and performance problems appear too late.
+Roblox projects often break because AI writes code without understanding Roblox-specific rules.
 
-RBSmithy forces Claude to work like a real Roblox developer:
-
-| Area | What RBSmithy helps with |
+| Common AI mistake | RBSmithy behavior |
 |---|---|
-| Architecture | Server/client/shared separation, services, controllers, modules |
-| Security | Remote validation, rate limits, server authority, anti-exploit reviews |
-| Gameplay | Combat, quests, inventory, ships, NPCs, survival systems |
-| UI/HUD | Safe areas, responsive scaling, HUD states, mobile support |
-| Data | DataStores, migrations, save safety, session handling |
-| Assets | Creator Store workflows, asset manifests, procedural models |
-| Performance | Low-end optimization, MicroProfiler review, frame budgets |
-| Production | QA, analytics, LiveOps, releases, rollback plans |
+| Trusts the client | Pushes server authority for currency, inventory, saves, damage, rewards, and quest state |
+| Creates random scripts | Gives Studio paths, Rojo paths, dependencies, and test steps |
+| Ignores exploits | Reviews remotes, rate limits, validation, and ownership checks |
+| Breaks mobile UI | Checks safe areas, scaling, touch controls, and small screens |
+| Overloads the map | Adds budgets for parts, meshes, particles, physics, and streaming |
+| Writes vague systems | Uses feature specs, contracts, acceptance criteria, and failure cases |
+| Ships untested code | Adds manual tests, multiplayer tests, and rollback notes |
 
 ---
 
-## Skill path
-
-The Claude Skill lives here:
+## Core workflow
 
 ```text
-skills/developing-roblox-games/SKILL.md
+Plan → Implement → Verify → Optimize → Ship
 ```
 
-Supporting files are organized into:
+RBSmithy should always try to answer with:
 
-```text
-skills/developing-roblox-games/
-├── reference/
-├── systems/
-├── playbooks/
-├── templates/
-├── tooling/
-├── prompts/
-└── examples/
-```
+1. **what to build;**
+2. **where the files go;**
+3. **what the server owns;**
+4. **what the client owns;**
+5. **what can be exploited;**
+6. **how to test it in Studio;**
+7. **what can break on low-end devices.**
 
 ---
 
-## Core features
+## Quick Install
 
-### Roblox engineering
+### Personal Claude Code skill
 
-RBSmithy helps Claude design Roblox projects with clear structure:
-
-```text
-ServerScriptService
-├── Services
-
-ReplicatedStorage
-├── Shared
-├── Remotes
-
-StarterPlayer
-├── StarterPlayerScripts
-│   └── Controllers
-
-StarterGui
-└── UI
-```
-
-It pushes for:
-
-- typed Luau
-- small modules
-- reusable ModuleScripts
-- clear remotes
-- server authority
-- manual Roblox Studio test steps
-- clean Rojo file paths
-- practical bug-fixing workflows
-
----
-
-### Multiplayer security
-
-RBSmithy follows one important rule:
-
-> Never trust the client.
-
-The skill helps Claude review and build:
-
-- secure RemoteEvents
-- RemoteFunction contracts
-- rate limits
-- server-side damage validation
-- currency protection
-- inventory protection
-- quest progress validation
-- anti-exploit checks
-- safe admin/debug commands
-
----
-
-### Game systems
-
-RBSmithy includes blueprints and workflows for many Roblox systems:
-
-- inventory systems
-- quest systems
-- dialogue systems
-- combat systems
-- ships and vehicles
-- NPCs and AI directors
-- HUD and UI systems
-- saving and profile data
-- economy and shops
-- matchmaking
-- achievements and badges
-- party and crew systems
-- bug reporting
-- analytics and telemetry
-- LiveOps and release planning
-
----
-
-### Dialogue and narrative design
-
-RBSmithy can help create deeper NPC dialogue by analyzing:
-
-- character voice
-- subtext
-- emotional conflict
-- pacing
-- player choice
-- quest purpose
-- scene function
-- inspiration from literature, films, and games
-
-It does **not** copy scenes or dialogue from copyrighted works.  
-It studies structure and creates original writing for your Roblox game.
-
----
-
-### Procedural 3D model generation
-
-RBSmithy supports procedural Roblox model workflows using:
-
-- Claude Code
-- Rojo
-- Luau model builders
-- Roblox Studio Command Bar
-- part-based low-poly models
-- Creator Store asset manifests
-
-It can help generate:
-
-- ships
-- props
-- buildings
-- islands
-- NPC placeholders
-- low-poly environment kits
-
-It also considers:
-
-- triangle budgets
-- part counts
-- collision complexity
-- mobile performance
-- low-end fallback models
-- visual style consistency
-
----
-
-### Creator Store asset workflow
-
-RBSmithy can help Claude use existing Roblox Creator Store assets safely through:
-
-- asset briefs
-- search terms
-- asset manifests
-- review folders
-- import commands
-- asset sanitizers
-- license/permission checks
-- procedural fallbacks when an asset is not suitable
-
-The goal is not to blindly insert random free models.  
-The goal is to build a controlled asset pipeline.
-
----
-
-### Internet research and mechanic inspiration
-
-RBSmithy can help study:
-
-- public tutorials
-- official Roblox documentation
-- open-source Roblox/Luau repositories
-- gameplay videos
-- reference games
-- mechanic breakdowns
-
-It uses a clean-room adaptation approach:
-
-1. Study the behavior.
-2. Extract the design pattern.
-3. Avoid copying protected code or assets.
-4. Build an original implementation for your project.
-5. Document the source of inspiration.
-
----
-
-### Optimization for low-end devices
-
-RBSmithy includes low-end optimization workflows for:
-
-- rendering
-- scripts
-- physics
-- networking
-- UI
-- particles
-- memory
-- terrain
-- assets
-- mobile devices
-
-It helps Claude avoid guessing and instead diagnose the real bottleneck.
-
----
-
-### Build Doctor
-
-RBSmithy includes a project health workflow called **Build Doctor**.
-
-It can review a Roblox project and produce a scorecard like:
-
-```text
-Architecture: 7/10
-Security: 6/10
-Data safety: 8/10
-Performance: 5/10
-Mobile / low-end: 4/10
-UI/UX: 7/10
-Content consistency: 8/10
-Tests: 3/10
-Analytics: 5/10
-Release readiness: 4/10
-```
-
-Then it gives the most important fixes before release.
-
----
-
-## Example prompts
-
-Use prompts like these with Claude Code:
-
-```text
-Use the developing-roblox-games skill. Review my Roblox project architecture and tell me what is wrong.
-```
-
-```text
-Use the developing-roblox-games skill. Create a secure typed Luau inventory system with DataStore saving.
-```
-
-```text
-Use the developing-roblox-games skill. Build a ship movement system with server authority and client HUD feedback.
-```
-
-```text
-Use the developing-roblox-games skill. Generate a low-poly island outpost using procedural Roblox parts and Rojo.
-```
-
-```text
-Use the developing-roblox-games skill. Review my RemoteEvent code for exploits.
-```
-
-```text
-Use the developing-roblox-games skill. Optimize this game for low-end phones.
-```
-
-```text
-Use the developing-roblox-games skill. Write deep NPC dialogue for a lighthouse keeper based on my quest outline.
-```
-
-```text
-Use the developing-roblox-games skill. Run Build Doctor on my Roblox project.
-```
-
----
-
-## Installation
-
-### Claude Code personal skill
-
-Install once and use across many Roblox projects:
+Install once and use in any Roblox project:
 
 ```bash
 mkdir -p ~/.claude/skills
-cp -R skills/developing-roblox-games ~/.claude/skills/
+cp -R skills/rbsmithy ~/.claude/skills/
 ```
 
-Then restart Claude Code.
+Restart Claude Code.
 
----
+Then use:
+
+```text
+Use RBSmithy. Review this Roblox feature plan before I implement it.
+```
 
 ### Project-level skill
 
-Copy the skill into your Roblox project:
+Install only inside one Roblox project:
 
 ```text
 your-roblox-project/
 └── .claude/
     └── skills/
-        └── developing-roblox-games/
+        └── rbsmithy/
 ```
 
-This makes the skill available only inside that project.
+Recommended for serious game projects.
 
 ---
 
-## Recommended Roblox toolchain
+## Capabilities
 
-RBSmithy works best with:
-
-| Tool | Purpose |
+| Area | What RBSmithy helps with |
 |---|---|
-| Roblox Studio | Main editor |
-| Claude Code | AI coding assistant |
-| Rojo | File sync between code editor and Studio |
-| Luau | Roblox scripting language |
-| Wally | Package management |
-| Selene | Luau linting |
-| StyLua | Code formatting |
-| GitHub | Version control |
+| **Luau** | typed modules, services, controllers, shared configs, clean APIs |
+| **Rojo** | filesystem layout, project structure, Studio placement |
+| **Multiplayer** | server authority, replication, remotes, anti-exploit checks |
+| **DataStores** | schema versions, defaults, migrations, safe saves, retries |
+| **UI/HUD** | responsive Roblox UI, safe areas, controller/mobile readability |
+| **3D assets** | procedural part-based assets, model briefs, budgets, import checklists |
+| **Creator Store** | safe asset review, manifest files, license/source notes |
+| **Combat** | cooldowns, hit validation, damage ownership, feedback loops |
+| **Quests** | data-driven quests, rewards, progression, journal/markers |
+| **NPCs** | dialogue, schedules, simple AI states, performance budgets |
+| **Optimization** | memory, physics, remotes, particles, streaming, mobile performance |
+| **QA** | test plans, exploit checks, regression tests, release readiness |
 
 ---
 
-## What RBSmithy will push back against
+## Example prompts
 
-RBSmithy is opinionated. It should reject bad Roblox development habits:
+```text
+Use RBSmithy. Create a server-authoritative inventory system for a Roblox game.
+```
 
-- giant scripts
-- unsafe remotes
-- client-owned money, damage, rewards, or saves
-- DataStore code without failure handling
-- UI with no mobile testing
-- no test steps
-- no folder structure
-- messy untyped code
-- copying code from other games
-- adding huge features before making a playable vertical slice
-- overengineering a small MVP
-- ignoring low-end devices
+```text
+Use RBSmithy. Review this RemoteEvent for exploits and rewrite it safely.
+```
+
+```text
+Use RBSmithy. Convert this Roblox Studio-only structure into a Rojo-friendly file plan.
+```
+
+```text
+Use RBSmithy. Build a DataStore schema with versioning, defaults, and safe migration notes.
+```
+
+```text
+Use RBSmithy. Design a mobile-friendly HUD for health, stamina, currency, and quickbar.
+```
+
+```text
+Use RBSmithy. Create a procedural low-poly island prop kit using Roblox Parts.
+```
+
+```text
+Use RBSmithy. Run a release readiness review for my Roblox project.
+```
 
 ---
 
-## Repository structure
+## Production guardrails
+
+RBSmithy should push back when a request would make a weak Roblox project.
+
+### It should not blindly:
+
+- trust the client;
+- let the client award money, items, XP, damage, or quest progress;
+- create unvalidated RemoteEvents;
+- ignore rate limits;
+- save raw client payloads;
+- insert random Creator Store models without review;
+- add heavy particles or physics without a budget;
+- write giant scripts with no module split;
+- skip Studio test steps.
+
+### It should always care about:
+
+- exploit resistance;
+- replication behavior;
+- low-end hardware;
+- mobile UI;
+- Studio testing;
+- clean file structure;
+- maintainability;
+- release readiness.
+
+---
+
+## Skill structure
 
 ```text
 rbsmithy-roblox-claude-skill/
@@ -394,48 +204,109 @@ rbsmithy-roblox-claude-skill/
 ├── CHANGELOG.md
 ├── CONTRIBUTING.md
 ├── FINAL_TEST_PROMPTS.md
+├── assets/
+│   └── rbsmithy-banner.png
 └── skills/
-    └── developing-roblox-games/
+    └── rbsmithy/
         ├── SKILL.md
         ├── reference/
-        ├── systems/
         ├── playbooks/
         ├── templates/
-        ├── tooling/
         ├── prompts/
         └── examples/
 ```
 
 ---
 
-## Release focus
-
-RBSmithy is designed around a full Roblox production pipeline:
+## Recommended Roblox architecture
 
 ```text
-Design
-→ MVP / vertical slice
-→ Architecture
-→ Implementation
-→ Security review
-→ Testing
-→ Localization
-→ Accessibility
-→ Analytics
-→ Performance budget
-→ Release checklist
-→ Rollback plan
-→ LiveOps iteration
+ReplicatedStorage/
+├── Shared/
+├── Config/
+├── Remotes/
+└── Packages/
+
+ServerScriptService/
+└── Services/
+
+StarterPlayer/
+└── StarterPlayerScripts/
+    └── Controllers/
+
+StarterGui/
+└── UI/
 ```
+
+### Rule
+
+```text
+Server owns truth.
+Client owns presentation.
+Shared owns contracts and config.
+```
+
+---
+
+## Release readiness checklist
+
+Before shipping a Roblox update, RBSmithy should check:
+
+- [ ] important state is server-owned;
+- [ ] remotes validate arguments and ownership;
+- [ ] DataStore writes are safe;
+- [ ] mobile UI is readable;
+- [ ] performance is acceptable on weak devices;
+- [ ] multiplayer behavior is tested;
+- [ ] rollback notes exist;
+- [ ] known bugs are documented;
+- [ ] release notes are clear.
+
+---
+
+## Best use cases
+
+RBSmithy is especially useful for:
+
+- Roblox adventure games;
+- simulator systems;
+- combat systems;
+- multiplayer co-op projects;
+- ship/vehicle mechanics;
+- quest and dialogue systems;
+- inventory and save systems;
+- UI/HUD implementation;
+- Creator Store asset review;
+- release QA.
+
+---
+
+## FAQ
+
+### Is this a Roblox Studio plugin?
+
+No. It is a **Claude Skill** for Claude Code. It guides Claude while it plans, writes, reviews, and improves your Roblox project.
+
+### Does it generate finished 3D models?
+
+It can help create procedural Roblox Part-based assets and model briefs. It should not pretend that text alone magically imports perfect FBX models.
+
+### Can it use Creator Store assets?
+
+Yes, but with review: source, license, scripts, collisions, part count, style fit, and performance budget should be checked.
+
+### Does it replace testing?
+
+No. RBSmithy should produce test steps, but you still test in Roblox Studio.
 
 ---
 
 ## License
 
-This project is licensed under the MIT License.
+MIT License.
 
 ---
 
-## Status
-
-RBSmithy is intended as a practical, production-focused Claude Skill for Roblox developers who want better architecture, safer multiplayer code, cleaner systems, stronger optimization, and a more professional development workflow.
+<p align="center">
+  <strong>RBSmithy helps Claude build Roblox games like an actual development workflow — not random scripts.</strong>
+</p>
