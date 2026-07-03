@@ -1,5 +1,5 @@
 ---
-name: developing-roblox-games
+name: rbsmithy
 description: Use this skill for professional Roblox game development in Roblox Studio and Luau, including gameplay systems, UI/HUD, multiplayer networking, RemoteEvents/RemoteFunctions, server-client architecture, DataStores, debugging Output errors, performance review, Rojo project setup, procedural 3D model generation with Claude Code + Rojo, Creator Store asset research/import workflows, internet/open-source research, reference-game mechanic analysis, clean-room adaptation, analytics/telemetry, LiveOps planning, monetization design review, MemoryStore/cross-server systems, performance budgets, device UI testing, feature packaging, game design documents/MVP scope, community safety, automated testing, localization, A/B experiments, release management, Roblox Packages/versioning, Open Cloud automation, accessibility, animation/audio pipelines, optional ECS architecture, project documentation, multi-agent production review, code review, refactoring, and secure multiplayer architecture.
 ---
 

@@ -1,16 +1,16 @@
 <p align="center">
-  <img src="assets/bloxsmith-banner.png" alt="BloxSmith — Claude Skill for Roblox Game Development" />
+  <img src="assets/rbsmithy-banner.png" alt="RBSmithy — Claude Skill for Roblox Game Development" />
 </p>
 
-<h1 align="center">BloxSmith</h1>
+<h1 align="center">RBSmithy</h1>
 
 <p align="center">
   <strong>A production-ready Claude Skill for serious Roblox game development.</strong>
 </p>
 
 <p align="center">
-  <a href="https://github.com/gogolumo/bloxsmith-roblox-claude-skill/releases">
-    <img src="https://img.shields.io/github/v/release/gogolumo/bloxsmith-roblox-claude-skill?style=for-the-badge&color=7c3aed" alt="Release" />
+  <a href="https://github.com/gogolumo/rbsmithy-roblox-claude-skill/releases">
+    <img src="https://img.shields.io/github/v/release/gogolumo/rbsmithy-roblox-claude-skill?style=for-the-badge&color=7c3aed" alt="Release" />
   </a>
   <img src="https://img.shields.io/badge/Claude-Skill-7c3aed?style=for-the-badge" alt="Claude Skill" />
   <img src="https://img.shields.io/badge/Roblox-Studio-red?style=for-the-badge" alt="Roblox Studio" />
@@ -21,13 +21,13 @@
 
 ---
 
-## What is BloxSmith?
+## What is RBSmithy?
 
-**BloxSmith** is a complete Claude Skill that turns Claude Code into a Roblox game development assistant.
+**RBSmithy** is a complete Claude Skill that turns Claude Code into a Roblox game development assistant.
 
 It helps Claude plan, implement, debug, refactor, optimize, and review Roblox games using **Luau**, **Roblox Studio**, **Rojo**, secure multiplayer architecture, DataStores, UI/HUD systems, procedural 3D workflows, Creator Store asset pipelines, QA, analytics, LiveOps, and release management.
 
-BloxSmith is not just a coding prompt.  
+RBSmithy is not just a coding prompt.  
 It is a practical production workflow for building Roblox games seriously.
 
 ---
@@ -36,9 +36,9 @@ It is a practical production workflow for building Roblox games seriously.
 
 Roblox projects often become messy because scripts grow too large, remotes become unsafe, DataStores are handled badly, UI breaks on mobile, and performance problems appear too late.
 
-BloxSmith forces Claude to work like a real Roblox developer:
+RBSmithy forces Claude to work like a real Roblox developer:
 
-| Area | What BloxSmith helps with |
+| Area | What RBSmithy helps with |
 |---|---|
 | Architecture | Server/client/shared separation, services, controllers, modules |
 | Security | Remote validation, rate limits, server authority, anti-exploit reviews |
@@ -78,7 +78,7 @@ skills/developing-roblox-games/
 
 ### Roblox engineering
 
-BloxSmith helps Claude design Roblox projects with clear structure:
+RBSmithy helps Claude design Roblox projects with clear structure:
 
 ```text
 ServerScriptService
@@ -111,7 +111,7 @@ It pushes for:
 
 ### Multiplayer security
 
-BloxSmith follows one important rule:
+RBSmithy follows one important rule:
 
 > Never trust the client.
 
@@ -131,7 +131,7 @@ The skill helps Claude review and build:
 
 ### Game systems
 
-BloxSmith includes blueprints and workflows for many Roblox systems:
+RBSmithy includes blueprints and workflows for many Roblox systems:
 
 - inventory systems
 - quest systems
@@ -153,7 +153,7 @@ BloxSmith includes blueprints and workflows for many Roblox systems:
 
 ### Dialogue and narrative design
 
-BloxSmith can help create deeper NPC dialogue by analyzing:
+RBSmithy can help create deeper NPC dialogue by analyzing:
 
 - character voice
 - subtext
@@ -171,7 +171,7 @@ It studies structure and creates original writing for your Roblox game.
 
 ### Procedural 3D model generation
 
-BloxSmith supports procedural Roblox model workflows using:
+RBSmithy supports procedural Roblox model workflows using:
 
 - Claude Code
 - Rojo
@@ -202,7 +202,7 @@ It also considers:
 
 ### Creator Store asset workflow
 
-BloxSmith can help Claude use existing Roblox Creator Store assets safely through:
+RBSmithy can help Claude use existing Roblox Creator Store assets safely through:
 
 - asset briefs
 - search terms
@@ -220,7 +220,7 @@ The goal is to build a controlled asset pipeline.
 
 ### Internet research and mechanic inspiration
 
-BloxSmith can help study:
+RBSmithy can help study:
 
 - public tutorials
 - official Roblox documentation
@@ -241,7 +241,7 @@ It uses a clean-room adaptation approach:
 
 ### Optimization for low-end devices
 
-BloxSmith includes low-end optimization workflows for:
+RBSmithy includes low-end optimization workflows for:
 
 - rendering
 - scripts
@@ -260,7 +260,7 @@ It helps Claude avoid guessing and instead diagnose the real bottleneck.
 
 ### Build Doctor
 
-BloxSmith includes a project health workflow called **Build Doctor**.
+RBSmithy includes a project health workflow called **Build Doctor**.
 
 It can review a Roblox project and produce a scorecard like:
 
@@ -351,7 +351,7 @@ This makes the skill available only inside that project.
 
 ## Recommended Roblox toolchain
 
-BloxSmith works best with:
+RBSmithy works best with:
 
 | Tool | Purpose |
 |---|---|
@@ -366,9 +366,9 @@ BloxSmith works best with:
 
 ---
 
-## What BloxSmith will push back against
+## What RBSmithy will push back against
 
-BloxSmith is opinionated. It should reject bad Roblox development habits:
+RBSmithy is opinionated. It should reject bad Roblox development habits:
 
 - giant scripts
 - unsafe remotes
@@ -388,7 +388,7 @@ BloxSmith is opinionated. It should reject bad Roblox development habits:
 ## Repository structure
 
 ```text
-bloxsmith-roblox-claude-skill/
+rbsmithy-roblox-claude-skill/
 ├── README.md
 ├── LICENSE
 ├── CHANGELOG.md
@@ -410,7 +410,7 @@ bloxsmith-roblox-claude-skill/
 
 ## Release focus
 
-BloxSmith is designed around a full Roblox production pipeline:
+RBSmithy is designed around a full Roblox production pipeline:
 
 ```text
 Design
@@ -438,4 +438,4 @@ This project is licensed under the MIT License.
 
 ## Status
 
-BloxSmith is intended as a practical, production-focused Claude Skill for Roblox developers who want better architecture, safer multiplayer code, cleaner systems, stronger optimization, and a more professional development workflow.
+RBSmithy is intended as a practical, production-focused Claude Skill for Roblox developers who want better architecture, safer multiplayer code, cleaner systems, stronger optimization, and a more professional development workflow.
