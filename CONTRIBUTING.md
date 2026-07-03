@@ -29,3 +29,8 @@ Good contributions make Claude more useful for real Roblox production work:
 - Which files changed?
 - How should Claude behave differently?
 - What Roblox Studio test case proves the improvement?
+
+---
+
+Repository note: this project is now maintained as **RBSmithy**.
+

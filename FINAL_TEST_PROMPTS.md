@@ -17,3 +17,8 @@ Use these prompts to test the final skill:
 13. Create a content bible and art direction bible for the project.
 14. Audit all Creator Store and generated assets.
 15. Run Build Doctor and score the project before release.
+
+---
+
+RBSmithy test prompts should prefer the `rbsmithy` skill name.
+

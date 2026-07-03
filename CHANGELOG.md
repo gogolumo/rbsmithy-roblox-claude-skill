@@ -91,3 +91,8 @@ Added final development workflow additions:
 - Deep original dialogue writing workflow using literature/game/film inspiration analysis without copying.
 - 3D model art budget system for choosing detail/poly/part budgets by use case and target hardware.
 - Low-end optimization workflow for weak devices, mobile, old laptops, and performance regression control.
+
+## RBSmithy metadata refresh
+
+- Refreshed repository naming after the RBSmithy rename.
+
