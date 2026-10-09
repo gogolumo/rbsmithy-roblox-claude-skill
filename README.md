@@ -27,6 +27,16 @@
 
 ---
 
+## Editions: Free vs Pro
+
+**This public repository contains RBSmithy Free only.** Everything under `skills/rbsmithy/` is the open-source MIT-licensed Free edition. Anyone may download and use it according to the MIT license.
+
+**RBSmithy Pro is a separate paid product**, shipped as a private `rbsmithy-pro/` package through Agensi. Pro adds a read-only offline Luau/Rojo audit CLI and focused production/security/release workflows. **The Pro `SKILL.md`, auditor implementation, and paid content are NOT in this repository.** Installing this GitHub repository does not install Pro.
+
+[Read the RBSmithy Pro documentation (documentation only, no paid package)](docs/pro/README.md).
+
+---
+
 ## What is RBSmithy?
 
 **RBSmithy** is a Claude Skill that turns Claude Code into a practical Roblox game development assistant.
