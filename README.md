@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <a href="[https://www.agensi.io/skills](https://www.agensi.io/skills/rbsmithy-pro)"><strong>Find RBSmithy Pro on Agensi ↗</strong></a>
+  <a href="https://www.agensi.io/skills/rbsmithy-pro"><strong>Find RBSmithy Pro on Agensi ↗</strong></a>
   &nbsp;·&nbsp;
   <a href="docs/pro/README.md">Pro documentation</a>
   &nbsp;·&nbsp;
