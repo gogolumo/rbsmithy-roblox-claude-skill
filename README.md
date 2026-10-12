@@ -9,6 +9,18 @@
 </p>
 
 <p align="center">
+  <a href="https://www.agensi.io/skills"><strong>Find RBSmithy Pro on Agensi ↗</strong></a>
+  &nbsp;·&nbsp;
+  <a href="docs/pro/README.md">Pro documentation</a>
+  &nbsp;·&nbsp;
+  <a href="#quick-install">Install RBSmithy Free</a>
+</p>
+
+<p align="center">
+  <sub>The Agensi link currently opens the marketplace, not a direct checkout page. Search for <strong>RBSmithy Pro</strong>.</sub>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Claude-Skill-7c3aed?style=for-the-badge" alt="Claude Skill" />
   <img src="https://img.shields.io/badge/Roblox-Luau-e2231a?style=for-the-badge&logo=roblox&logoColor=white" alt="Roblox Luau" />
   <img src="https://img.shields.io/badge/Rojo-Ready-f97316?style=for-the-badge" alt="Rojo Ready" />
@@ -33,7 +45,7 @@
 
 **RBSmithy Pro is a separate paid product**, shipped as a private `rbsmithy-pro/` package through Agensi. Pro adds a read-only offline Luau/Rojo audit CLI and focused production/security/release workflows. **The Pro `SKILL.md`, auditor implementation, and paid content are NOT in this repository.** Installing this GitHub repository does not install Pro.
 
-[Read the RBSmithy Pro documentation (documentation only, no paid package)](docs/pro/README.md).
+**Interested in Pro?** [Find RBSmithy Pro on Agensi](https://www.agensi.io/skills) (search the marketplace for **RBSmithy Pro**). For installation details, features, and limitations, [read the Pro documentation](docs/pro/README.md). The paid ZIP is delivered through Agensi, not this repository.
 
 ---
 
