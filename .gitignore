@@ -1,36 +1,5 @@
-# RBSmithy repository ignores
-# Roblox / Rojo
-*.rbxl
-*.rbxlx
-*.rbxm
-*.rbxmx
-*.mesh
-*.fbx
-*.obj
-*.blend
-
-# Tooling
-Packages/
-DevPackages/
-sourcemap.json
-*.sourcemap.json
-
-# OS / editor
-.DS_Store
-Thumbs.db
-.vscode/settings.json
-.idea/
-
-# Logs
-*.log
-npm-debug.log*
-.env
-.env.*
-tools/**/.env
-
-.secrets
-secrets.*
-roblox-api-keys.json
-!.env.example
+__pycache__/
+*.pyc
 dist/
-coverage/
+.venv/
+.env

@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <sub>The Agensi link currently opens the marketplace, not a direct checkout page. Search for <strong>RBSmithy Pro</strong>.</sub>
+  <sub>The Agensi link opens the existing <strong>RBSmithy Pro</strong> listing.</sub>
 </p>
 
 <p align="center">
@@ -45,7 +45,7 @@
 
 **RBSmithy Pro is a separate paid product**, shipped as a private `rbsmithy-pro/` package through Agensi. Pro adds a read-only offline Luau/Rojo audit CLI and focused production/security/release workflows. **The Pro `SKILL.md`, auditor implementation, and paid content are NOT in this repository.** Installing this GitHub repository does not install Pro.
 
-**Interested in Pro?** [Find RBSmithy Pro on Agensi](https://www.agensi.io/skills) (search the marketplace for **RBSmithy Pro**). For installation details, features, and limitations, [read the Pro documentation](docs/pro/README.md). The paid ZIP is delivered through Agensi, not this repository.
+**Interested in Pro?** [Find RBSmithy Pro on Agensi](https://www.agensi.io/skills/rbsmithy-pro). For installation details, features, and limitations, [read the Pro documentation](docs/pro/README.md). The paid ZIP is delivered through Agensi, not this repository.
 
 ---
 

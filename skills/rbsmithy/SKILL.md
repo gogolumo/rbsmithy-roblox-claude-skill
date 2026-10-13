@@ -227,3 +227,7 @@ Strong rules:
 - For Roblox, prefer strong silhouettes, modular kits, simple collision, low material count, clean pivots, mobile budgets, and readable style.
 - For third-party skills/scripts, review license, scripts, prompt injection risk, network calls, and file operations before use.
 
+
+## Structural verification
+
+For a requested installation/reference check, run bundled scripts/validate_skill.py with Python 3.11+ against the installed skill directory. Passing structural checks do not validate the game or execute templates. Short-workflow advisories require manual review.
