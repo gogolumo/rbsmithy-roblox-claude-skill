@@ -23,7 +23,8 @@ def inspect(root):
     for file in files:
         text = file.read_text(encoding="utf-8")
         fence = chr(96)*3
-        prose = re.sub(r"(?ms)^"+fence+r".*?^"+fence+r"\s*$", "", text)
+        prose = re.sub(r"(?ms)^"+fence+r".*?^"+fence+r"\s*$",
+                       lambda m: "\n"*m.group(0).count("\n"), text)
         rel = file.relative_to(root).as_posix()
         if not text.strip():
             errors.append(dict(path=rel, message="empty Markdown file"))
@@ -31,6 +32,20 @@ def inspect(root):
             advisory.append(dict(path=rel, message="short workflow: inspect inputs, concrete checks and failure handling manually"))
         targets = [(m.group(1), m.start()) for m in re.finditer(r"\[[^\]]*\]\(([^)]+)\)", prose)]
         targets += [(m.group(1), m.start()) for m in re.finditer(r'href="([^"]+)"', prose)]
+        # Explicit/collapsed references resolve definitions in the same document.
+        # Unresolved labels remain ordinary Markdown text, not fabricated links.
+        definitions = {}
+        label = lambda value: " ".join(value.split()).casefold()
+        for definition in re.finditer(r"(?m)^ {0,3}\[([^\]]+)\]:[ \t]*(<[^>\n]+>|[^\s]+)", prose):
+            definitions.setdefault(label(definition[1]), definition[2].strip("<>"))
+        for reference in re.finditer(r"(?<!!)\[([^\]\n]+)\]\[([^\]\n]*)\]", prose):
+            key = label(reference[2] or reference[1])
+            if key in definitions:
+                targets.append((definitions[key], reference.start()))
+        for reference in re.finditer(r"(?<![!\]\w])\[([^\]\n]+)\](?![\[(]|:)", prose):
+            key = label(reference[1])
+            if key in definitions:
+                targets.append((definitions[key], reference.start()))
         if file == entry:
             targets += [(m.group(1), m.start()) for m in re.finditer(r"(?<!\w)((?:reference|playbooks|systems|templates|scripts)/[A-Za-z0-9_./-]+\.(?:md|py|luau))", prose)]
         for target, offset in targets:
@@ -57,7 +72,7 @@ def inspect(root):
                 if unquote(target.split("#", 1)[1]) not in slugs:
                     errors.append(dict(path=rel, line=line, message="missing heading anchor", target=target))
     return dict(errors=errors, advisory=advisory, markdown_files=len(files),
-                limitations="Link targets and ordinary GitHub Markdown heading/HTML anchors; reference-style Markdown and exotic heading syntax remain unparsed. Semantic correctness, runtime APIs and template execution require manual review.")
+                limitations="Inline and ordinary reference-style link targets with GitHub Markdown heading/HTML anchors; multiline definitions, reference images and exotic heading syntax remain unparsed. Semantic correctness, runtime APIs and template execution require manual review.")
 
 
 def main():

@@ -59,6 +59,30 @@ class StructureTests(unittest.TestCase):
             p=root/"SKILL.md";p.write_text(p.read_text().replace("name: rbsmithy","name: other"))
             self.assertEqual(validator.inspect(root)["errors"][0]["message"],"invalid skill metadata")
 
+    def test_reference_links_checked(self):
+        for body in ("[Guide][ref]\n\n[ref]: missing.md", "[ref][]\n\n[ref]: missing.md",
+                     "[ref]\n\n[ref]: missing.md"):
+            with tempfile.TemporaryDirectory() as tmp, self.subTest(body=body):
+                root = self.root(tmp, body)
+                self.assertTrue(any(e["message"] == "missing internal reference" for e in validator.inspect(root)["errors"]))
+
+    def test_reference_label_case_whitespace_and_heading(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.root(tmp, "# Example\n[Guide][ MY   REF ]\n\n[my ref]: <#example>")
+            self.assertFalse(validator.inspect(root)["errors"])
+
+    def test_unresolved_reference_is_plain_text(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = self.root(tmp, "[not a defined link][missing]")
+            self.assertFalse(validator.inspect(root)["errors"])
+
+    def test_link_line_after_code_fence(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            body=chr(96)*3+"python\nignored()\n"+chr(96)*3+"\n[Guide][ref]\n\n[ref]: missing.md\n"
+            root=self.root(tmp,body)
+            finding=validator.inspect(root)["errors"][0]
+            self.assertEqual(finding["line"],8)
+
     def test_free_license_and_boundary(self):
         self.assertTrue((ROOT/"LICENSE").read_text().startswith("MIT License"))
         self.assertFalse(any(p.name=="rbsmithy-pro" for p in (ROOT/"skills").rglob("*")))
