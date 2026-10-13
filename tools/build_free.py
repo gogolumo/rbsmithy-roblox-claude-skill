@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 import subprocess
 import sys
+import re
 import tempfile
 import zipfile
 
@@ -23,7 +24,11 @@ def build():
         path = ROOT / name
         if path.is_symlink() or any(p.startswith(".") for p in path.relative_to(ROOT / "skills/rbsmithy").parts):
             raise ValueError("non-distributable file in skill tree")
-        entries["rbsmithy/" + path.relative_to(ROOT / "skills/rbsmithy").as_posix()] = path.read_bytes()
+        content = path.read_bytes()
+        for pattern in (rb"gh[pousr]_[A-Za-z0-9]{30,}", rb"github_pat_[A-Za-z0-9_]{40,}", rb"AKIA[A-Z0-9]{16}", rb"-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----"):
+            if re.search(pattern, content):
+                raise ValueError("possible secret in distributable file; value withheld")
+        entries["rbsmithy/" + path.relative_to(ROOT / "skills/rbsmithy").as_posix()] = content
     entries["rbsmithy/LICENSE"] = (ROOT / "LICENSE").read_bytes()
     if not entries["rbsmithy/LICENSE"].startswith(b"MIT License"):
         raise ValueError("Free license must remain MIT")
