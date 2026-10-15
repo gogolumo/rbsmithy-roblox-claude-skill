@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.1.1 — unreleased branch follow-up
+
+Validate ordinary full, collapsed and shortcut Markdown references; undefined labels stay plain text. Multiline reference definitions and reference images remain unsupported.
+
+## 1.1.0 — 2026-10-13 (branch candidate)
+
+- Added executable structural validation, deterministic standalone MIT packaging and regression/CI checks.
+- Expanded rollback and package-update workflows with compatibility, failure and authorization decisions.
+- Fixed stale Pro listing text and clarified generated-doc link placeholders.
+- Defined canonical tag-based versions; historical content milestone headings below remain unchanged.
 
 ## v4.0.0 - Internet research and clean-room mechanic adaptation
 

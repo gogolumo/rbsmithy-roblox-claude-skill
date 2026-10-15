@@ -34,3 +34,8 @@ roblox-api-keys.json
 !.env.example
 dist/
 coverage/
+
+# Engineering checks and local builds
+__pycache__/
+*.pyc
+.venv/
