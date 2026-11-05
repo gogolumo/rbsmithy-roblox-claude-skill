@@ -39,6 +39,8 @@
 
 ---
 
+> **Commercial inquiries:** For a scoped Roblox/Rojo audit workflow, see [custom implementation and commercial inquiries](COMMERCIAL.md). The public Free edition remains MIT-licensed.
+
 ## Editions: Free vs Pro
 
 **This public repository contains RBSmithy Free only.** Everything under `skills/rbsmithy/` is the open-source MIT-licensed Free edition. Anyone may download and use it according to the MIT license.
